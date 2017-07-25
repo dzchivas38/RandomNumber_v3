@@ -211,3 +211,37 @@
     background-color: #6bcc0f !important;
     border-color: #6bcc0f !important;
 }
+.table-scrollable {
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+.table-scrollable.thin {
+    border: none;
+}
+.thin {
+    margin: 0px !important;
+}
+.table-advance {
+    margin-bottom: 10px !important;
+}
+
+.table-advance thead {
+    color: #999;
+}
+
+.table-advance thead tr th {
+    background-color: #DDD;
+    font-size: 14px;
+    font-weight: 400;
+    color: #666;
+}
+.td-center td {
+    text-align: center;
+}
+.mg-top-10{
+    margin-top: 10px;
+}
+.mg-top-20{
+    margin-top: 20px;
+}
