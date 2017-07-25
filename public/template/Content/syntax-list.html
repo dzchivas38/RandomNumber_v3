@@ -1,8 +1,14 @@
 <div class="body-content" ng-controller="SyntaxListController">
     <div class="content-ti">
         <div class="row">
-            <div class="col-sm-12 col-xs-12">
+            <div class="col-sm-6 col-xs-6">
                 <span class="caption-subject">Quản lý cú pháp</span>
+            </div>
+            <div class="col-sm-6 col-xs-6">
+                <button class="btn btn-sm btn-action-create" type="button">
+                    <i class="icon-plus"></i>
+                    <span>Thêm cú pháp</span>
+                </button>
             </div>
             <div class="col-sm-12">
                 <hr style="margin-top:0px !important;margin-bottom:10px !important;" />
@@ -10,11 +16,38 @@
         </div>
         <div class="row">
             <div class="col-sm-12 col-xs-12">
-
+                <div class="table-responsive">
+                    <div class="table-scrollable thin">
+                        <table class="table table-advance">
+                            <thead>
+                            <tr>
+                                <th>STT</th>
+                                <th>Cú pháp</th>
+                                <th>Tên loại chơi</th>
+                                <th>Mô tả</th>
+                                <th></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>{{$index}}</td>
+                                <td>|cang_g1#</td>
+                                <td>Càng giải nhất</td>
+                                <td></td>
+                                <td>
+                                    <button class="btn btn-sm" type="button">
+                                        <i class="icon-note" style="color: royalblue"></i>
+                                    </button>
+                                    <button class="btn btn-sm" type="button">
+                                        <i class="icon-trash" style="color: red"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="row">
-
         </div>
     </div>
 </div>

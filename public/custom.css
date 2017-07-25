@@ -245,3 +245,8 @@
 .mg-top-20{
     margin-top: 20px;
 }
+.btn-action-create{
+    background: #6bcc0f; color: white;
+    float: right;
+    margin-bottom: 5px;
+}

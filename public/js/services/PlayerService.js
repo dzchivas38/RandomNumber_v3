@@ -8,12 +8,13 @@
         .module('randomNumberApp')
         .factory('PlayerSvc', pl);
 
-    pl.$inject = ['$http', '$q', '$injector', '$rootScope'];
+    pl.$inject = ['$http', '$q'];
 
     function pl($http, $q) {
         var service = {
             getById: getById,
             getAll:getAll,
+            createPlayer:createPlayer
         };
 
         return service;
@@ -23,6 +24,12 @@
         }
         function getById(id) {
 
+        }
+        function createPlayer() {
+            var result= {
+                success:true
+            };
+            return result;
         }
         function getMethodService(restUrl,data) {
             var dfd = $q.defer();

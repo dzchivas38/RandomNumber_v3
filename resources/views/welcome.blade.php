@@ -28,9 +28,14 @@
         <link href="{!! url('css/simple-line-icon/simple-line-icons.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('css/textangular/dist/textAngular.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('statics/jquery/dist/jquery.datetimepicker.css') !!}" rel="stylesheet " type="text/css " />
+        <link href="{!! url('statics/angular/angular-block-ui.min.css') !!}" rel="stylesheet " type="text/css " />
+        <link href="{!! url('statics/angular/angular-toastr.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('custom.css') !!}" rel="stylesheet " type="text/css " />
 
         <script src="{!! url('app.js') !!}"></script>
+        {{-----------------MODAL------------------}}
+        <script src="{!! url('template/Modal/playerFormController.js') !!}"></script>
+        {{-----------------ENDMODAL----------------}}
 
         {{--------------------------SERVICES------------------------------}}
         <script type="text/javascript" src="{!! url('js/services/PlayerService.js') !!}"></script>
@@ -41,6 +46,8 @@
         <script src="{!! url('js/controller/HomeController.js') !!}"></script>
         <script src="{!! url('js/controller/SyntaxListController.js') !!}"></script>
         <!-- ---ENDCONTROLLER----- -->
+
+
     </head>
     <body style="overflow: hidden;">
         <div id="wrapper" ng-app="randomNumberApp">

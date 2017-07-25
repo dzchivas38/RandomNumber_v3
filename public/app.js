@@ -1,4 +1,4 @@
-var routerApp = angular.module('randomNumberApp', ['ui.router']);
+var routerApp = angular.module('randomNumberApp', ['ui.router','ui.bootstrap','blockUI', 'ngSanitize','toastr']);
 
 routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
