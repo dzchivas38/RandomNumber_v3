@@ -206,6 +206,9 @@
 .font-green-jungle {
     color: #6bcc0f;
 }
+.font-red {
+    color: #ff3c41;
+}
 .btn-green {
     color: #fff;
     background-color: #6bcc0f !important;
@@ -249,4 +252,7 @@
     background: #6bcc0f; color: white;
     float: right;
     margin-bottom: 5px;
+}
+.no-padding{
+    padding: 0px;
 }

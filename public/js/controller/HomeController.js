@@ -24,7 +24,7 @@
                 format: 'd/m/Y',
                 dateonly: false,
                 showHour: false,
-                closeOnDateSelect: false,
+                closeOnDateSelect: true,
                 showMinute: false,
                 timepicker: false,
                 onChangeDateTime: function(dp, $input) {

@@ -19,6 +19,7 @@
          <script src="{!! url('statics/magicsuggest/magicsuggest-min.js') !!}"></script>
          <script src="{!! url('statics/moment/moment.min.js') !!}"></script>
 
+        <link href="{!! url('css/textangular/dist/textAngular.css') !!}" rel="stylesheet " type="text/css " />
          <script src="{!! url('statics/textangular/dist/textAngular-rangy.min.js') !!}"></script>
          <script src="{!! url('statics/textangular/dist/textAngular-sanitize.min.js') !!}"></script>
          <script src="{!! url('statics/textangular/dist/textAngular.min.js') !!}"></script>
@@ -26,26 +27,29 @@
         <link href="{!! url('css/bootstrap/bootstrap.min.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('css/font-awesome/css/font-awesome.min.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('css/simple-line-icon/simple-line-icons.css') !!}" rel="stylesheet " type="text/css " />
-        <link href="{!! url('css/textangular/dist/textAngular.css') !!}" rel="stylesheet " type="text/css " />
+        <link href="{!! url('statics/magicsuggest/magicsuggest-min.css') !!}" rel="stylesheet " type="text/css " />
+
         <link href="{!! url('statics/jquery/dist/jquery.datetimepicker.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('statics/angular/angular-block-ui.min.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('statics/angular/angular-toastr.css') !!}" rel="stylesheet " type="text/css " />
         <link href="{!! url('custom.css') !!}" rel="stylesheet " type="text/css " />
 
         <script src="{!! url('app.js') !!}"></script>
-        {{-----------------MODAL------------------}}
+        {{---------------------------MODAL-------------------------------}}
         <script src="{!! url('template/Modal/playerFormController.js') !!}"></script>
-        {{-----------------ENDMODAL----------------}}
+        {{---------------------------ENDMODAL-----------------------------}}
 
         {{--------------------------SERVICES------------------------------}}
         <script type="text/javascript" src="{!! url('js/services/PlayerService.js') !!}"></script>
         {{--------------------------ENDSERVICES---------------------------}}
-         <!-----CONTROLLER----- -->
+         <!--------------------------CONTROLLER-------------------------- -->
 
         <script src="{!! url('js/controller/PlayerListController.js') !!}"></script>
         <script src="{!! url('js/controller/HomeController.js') !!}"></script>
         <script src="{!! url('js/controller/SyntaxListController.js') !!}"></script>
-        <!-- ---ENDCONTROLLER----- -->
+        <script src="{!! url('js/controller/ActionTypeListController.js') !!}"></script>
+        <script src="{!! url('js/controller/CalculatorController.js') !!}"></script>
+        <!-- ------------------------ENDCONTROLLER----------------------- -->
 
 
     </head>

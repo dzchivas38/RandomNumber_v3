@@ -1,4 +1,4 @@
-var routerApp = angular.module('randomNumberApp', ['ui.router','ui.bootstrap','blockUI', 'ngSanitize','toastr']);
+var routerApp = angular.module('randomNumberApp', ['ui.router','ui.bootstrap','blockUI', 'ngSanitize','toastr','textAngular']);
 
 routerApp.config(function ($stateProvider, $urlRouterProvider) {
 
@@ -20,5 +20,9 @@ routerApp.config(function ($stateProvider, $urlRouterProvider) {
         .state('syntax', {
             url: '/syntax',
             templateUrl: 'template/Content/syntax-list.html'
+        })
+        .state('calculator', {
+            url: '/calculator',
+            templateUrl: 'template/Content/calculator.html'
         });
 });
