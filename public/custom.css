@@ -256,3 +256,9 @@
 .no-padding{
     padding: 0px;
 }
+.ta-scroll-window > .ta-bind {
+    min-height: 200px;
+}
+.ta-editor.ta-html, .ta-scroll-window.form-control {
+    min-height: 200px;
+}

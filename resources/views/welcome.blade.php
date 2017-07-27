@@ -53,7 +53,7 @@
 
 
     </head>
-    <body style="overflow: hidden;">
+    <body>
         <div id="wrapper" ng-app="randomNumberApp">
             <!-- NAVIGATION -->
             <div ng-include="'template/Header/Header.html'"></div>
