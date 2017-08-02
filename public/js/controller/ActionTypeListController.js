@@ -8,13 +8,30 @@
         .module('randomNumberApp')
         .controller('ActionTypeController', ActionTypeController);
 
-    ActionTypeController.$inject = ['$scope'];
+    ActionTypeController.$inject = ['$scope','$uibModal','toastr'];
 
-    function ActionTypeController($scope) {
+    function ActionTypeController($scope,$uibModal,toastr) {
         $scope.title = 'ActionTypeController';
         formLoad();
         function formLoad() {
 
+        };
+        $scope.createActionTypeUi = function () {
+            return $uibModal
+                .open({
+                    templateUrl: "template/Modal/actionsTypeForm.html",
+                    controller: "CreateActionTypeCtrl",
+                    size: "lg",
+                    resolve: {
+                        $actionType: { Id: 0 }
+                    }
+                })
+                .result.then(function (result) {
+                    toastr.success("OK", 'Thành công');
+                })
+                .catch(function (e) {
+                    console.log(e);
+                });
         };
     }
 })();

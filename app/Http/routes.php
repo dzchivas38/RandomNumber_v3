@@ -15,3 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/api-get-player', 'PlayerController@getAll');
+
+Route::get('/test1', 'HomeController@getNumberResultEveryDay');

@@ -59,6 +59,8 @@
       <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
       <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
       <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+      <path value="$PROJECT_DIR$/vendor/awjudd/feed-reader" />
+      <path value="$PROJECT_DIR$/vendor/simplepie/simplepie" />
     </include_path>
   </component>
   <component name="PhpUnit">
