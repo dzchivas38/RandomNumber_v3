@@ -8,13 +8,15 @@
         .module('randomNumberApp')
         .controller('HomeController', HomeController);
 
-    HomeController.$inject = ['$scope'];
+    HomeController.$inject = ['$scope','HomeSvc','$uibModal','toastr'];
 
-    function HomeController($scope) {
+    function HomeController($scope,$homeSvc,$uibModal,toastr) {
         $scope.title = 'HomeController';
         formLoad();
         function formLoad() {
-
+            $homeSvc.getResurltScheduce().then(function (item) {
+               console.log(item);
+            });
         };
         $(function () {
             $('.txtDateTime').datetimepicker({

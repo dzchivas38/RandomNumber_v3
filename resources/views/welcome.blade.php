@@ -42,6 +42,7 @@
 
         {{--------------------------SERVICES------------------------------}}
         <script type="text/javascript" src="{!! url('js/services/PlayerService.js') !!}"></script>
+        <script type="text/javascript" src="{!! url('js/services/HomeService.js') !!}"></script>
         {{--------------------------ENDSERVICES---------------------------}}
          <!--------------------------CONTROLLER-------------------------- -->
 
