@@ -14,8 +14,14 @@
         $scope.title = 'HomeController';
         formLoad();
         function formLoad() {
-            $homeSvc.getResurltScheduce().then(function (item) {
+            $homeSvc.getResultScheduce().then(function (item) {
                console.log(item);
+               // var resultScheduce = _.map(item,function (r) {
+               //     var descArr = _.split(r.description, '\n', _.get(r,"description.length"));
+               //     r.description = _.clone(descArr);
+               //     return r;
+               // });
+               // console.log(resultScheduce);
             });
         };
         $(function () {

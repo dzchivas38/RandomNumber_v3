@@ -12,11 +12,11 @@
 
     function pl($http, $q) {
         var service = {
-            getResurltScheduce:getResurltScheduce,
+            getResultScheduce:getResultScheduce,
         };
 
         return service;
-        function getResurltScheduce() {
+        function getResultScheduce() {
             var url = 'api-get-result-resource';
             return getMethodService(url,null);
         }
