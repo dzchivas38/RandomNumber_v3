@@ -1,0 +1,13 @@
+cp .env.example .env
+php artisan key:generate
+//tạo mới 1 file command tên DemoCron
+php artisan make:console DemoCron --command=demo:cron
+//Khi clone source về môi  trường mới cần update lại các dependencies qua composer
+composer update --no-scripts
+//tạo mới 1 controller
+php artisan make:controller controllername
+
+php artisan serve --port=8080
+
+
+PHP : foreach (Array as $key=>$value) : ra cặp key và value

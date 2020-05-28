@@ -5,7 +5,7 @@
                 <span class="caption-subject">Quản lý cú pháp</span>
             </div>
             <div class="col-sm-6 col-xs-6">
-                <button class="btn btn-sm btn-action-create" type="button">
+                <button class="btn btn-sm btn-action-create" type="button" ng-click="createSyntaxUi(0)">
                     <i class="icon-plus"></i>
                     <span>Thêm cú pháp</span>
                 </button>
@@ -23,22 +23,22 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Cú pháp</th>
-                                <th>Tên loại chơi</th>
+                                <th>Cú pháp chuẩn</th>
                                 <th>Mô tả</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr ng-repeat="item in syntaxList">
                                 <td>{{$index}}</td>
-                                <td>|cang_g1#</td>
-                                <td>Càng giải nhất</td>
-                                <td></td>
+                                <td>{{item.Name}}</td>
+                                <td>{{item.SyntaxForm}}</td>
+                                <td>{{item.Description}}</td>
                                 <td>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="createSyntaxUi(item.Id)">
                                         <i class="icon-note" style="color: royalblue"></i>
                                     </button>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="delteItem(item.Id)">
                                         <i class="icon-trash" style="color: red"></i>
                                     </button>
                                 </td>

@@ -262,3 +262,13 @@
 .ta-editor.ta-html, .ta-scroll-window.form-control {
     min-height: 200px;
 }
+.ta-toolbar{
+    display: none;
+}
+.ta-toolbar.focussed{
+    display: none;
+}
+
+div.ms-res-ctn.dropdown-menu{
+    position: relative;
+}

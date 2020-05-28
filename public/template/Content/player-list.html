@@ -5,7 +5,7 @@
                 <span class="caption-subject">Quản lý khách hàng</span>
             </div>
             <div class="col-sm-6 col-xs-6">
-                <button class="btn btn-sm btn-action-create" type="button" ng-click="createPlayerUi()">
+                <button class="btn btn-sm btn-action-create" type="button" ng-click="createPlayerUi(0)">
                     <i class="icon-user-follow"></i>
                     <span>Thêm khách hàng</span>
                 </button>
@@ -23,26 +23,27 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Tên</th>
-                                <th>Loại khách hàng</th>
                                 <th>Số điện thoại</th>
                                 <th>Mô tả</th>
                                 <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr ng-repeat="player in players">
                                 <td>{{$index}}</td>
-                                <td>Nguyễn Việt Dũng</td>
-                                <td>Đại lý</td>
-                                <td>0972763643</td>
-                                <td>Ở nguyễn thị duệ</td>
+                                <td>{{player.Name}}</td>
+                                <td>{{player.PhoneNumber}}</td>
+                                <td>{{player.Description}}</td>
                                 <td>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="createPlayerUi(player.Id)">
                                         <i class="icon-note" style="color: royalblue"></i>
                                     </button>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="delteItem(player.Id)">
                                     <i class="icon-trash" style="color: red"></i>
-                                </button>
+                                    </button>
+                                    <button class="btn btn-sm" type="button" ng-click="cashOutInfo(player)">
+                                        <i class="icon-share" style="color: red"></i>
+                                    </button>
                                 </td>
                             </tr>
                             </tbody>

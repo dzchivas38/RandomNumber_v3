@@ -15,19 +15,19 @@
             <div class="form-horizontal">
                 <div class="row">
                     <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
-                        Tên
+                        Tên cú pháp
                         <span style="color: red">*</span>
                     </span>
                     <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
-                        <input ng-model="player.Name" type="text" class="form-control input-sm"/>
+                        <input ng-model="syntax.Name" type="text" class="form-control input-sm"/>
                     </div>
                 </div>
                 <div class="row">
                     <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
-                        Số điện thoại
+                        Cú pháp chuẩn
                     </span>
                     <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
-                        <input ng-model="player.PhoneNumber" type="text" class="form-control input-sm"/>
+                        <div id="ms-ca-action-type"></div>
                     </div>
                 </div>
                 <div class="row">
@@ -35,7 +35,7 @@
                         Mô tả
                     </span>
                     <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
-                        <input ng-model="player.Description" type="text" class="form-control input-sm"/>
+                        <textarea style="width: inherit" ng-model="syntax.Description" class="form-control input-sm"/>
                     </div>
                 </div>
             </div>

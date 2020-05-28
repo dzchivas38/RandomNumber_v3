@@ -1,0 +1,109 @@
+<!doctype html>
+<!--<link href="/custom.css" rel="stylesheet " type="text/css ">-->
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">
+        {{Title}}
+    </h4>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <div class="col-sm-12 col-xs-12">
+                        <div class="table-responsive">
+                            <div class="table-scrollable thin">
+                                <table class="table table-advance">
+                                    <thead>
+                                    <tr>
+                                        <th>STT</th>
+                                        <th style="min-width: 200px">Loại chơi</th>
+                                        <th style="min-width: 200px;">Cú pháp chuẩn</th>
+                                        <th>Tỉ lệ vào</th>
+                                        <th>Tỉ lệ ra</th>
+                                        <th style="width: 12%"></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr ng-if="cashOutList.length > 0" ng-repeat="item in cashOutList">
+                                            <td>{{$index}}</td>
+                                            <td>
+                                                <span ng-if="!($index === indexLine)">{{item.Name}}</span>
+                                                <div ng-show="($index === indexLine)" class="col-sm-12 col-xs-12 no-padding">
+                                                    <div ng-attr-id="{{'ms-ca-action-edit-' + $index}}"></div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <span ng-if="!($index === indexLine)">
+                                                    {{item.Code}}
+                                                </span>
+                                                <span ng-show="($index === indexLine)">
+                                                    {{actionTypePickToEdit.Code}}
+                                                </span>
+                                            </td>
+                                            <td>
+                                                <span ng-if="!($index === indexLine)">
+                                                    {{item.InCoin}}
+                                                </span>
+                                                <input ng-if="($index === indexLine)" ng-model="item.InCoin" type="text" class="form-control input-sm"/>
+                                            </td>
+                                            <td>
+                                                <span ng-if="!($index === indexLine)">
+                                                    {{item.OutCoin}}
+                                                </span>
+                                                <input ng-if="($index === indexLine)" ng-model="item.OutCoin" type="text" class="form-control input-sm"/>
+                                            </td>
+                                            <td>
+                                                <button ng-if="!($index === indexLine)" class="btn btn-sm" type="button" ng-click="editItem($index,item)">
+                                                    <i class="icon-note" style="color: royalblue"></i>
+                                                </button>
+                                                <button ng-if="($index === indexLine)" class="btn btn-sm" type="button" ng-click="saveItem(item)">
+                                                    <i class="icon-arrow-right" style="color: royalblue"></i>
+                                                </button>
+                                                <button class="btn btn-sm" type="button">
+                                                    <i class="icon-trash" style="color: red"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        <tr ng-if="cashOutList.length == 0"><td colspan="6">Không có dữ liệu để hiển thị</td></tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>
+                                                <div class="col-sm-12 col-xs-12 no-padding">
+                                                    <div id="ms-ca-action"></div>
+                                                </div>
+                                            </td>
+                                            <td>{{actionTypePick.Code}}</td>
+                                            <td><input ng-model="cashOut.InCoin" type="text" class="form-control input-xs" required/></td>
+                                            <td><input ng-model="cashOut.OutCoin" type="text" class="form-control input-xs" required/></td>
+                                            <td>
+                                                <button class="btn btn-sm" type="button" ng-click="createCashOut()">
+                                                    Save
+                                                    <i class="icon-plus" style="color: red"></i>
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default btn-sm" ng-click="save()" style="width: 120px;">
+        <i class="icon-share-alt" style="color: dodgerblue"></i>
+        Lưu lại
+    </button>
+    <button type="button" class="btn btn-default btn-sm" ng-click="close()" style="width: 120px;">
+        <i class="icon-close" style="color: dodgerblue"></i>
+        Đóng
+    </button>
+</div>

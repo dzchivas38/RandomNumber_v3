@@ -19,7 +19,36 @@
                         <span style="color: red">*</span>
                     </span>
                     <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
-                        <input ng-model="player.Name" type="text" class="form-control input-sm"/>
+                        <input ng-model="actionType.Name" type="text" class="form-control input-sm"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
+                        Mã
+                        <span style="color: red">*</span>
+                    </span>
+                    <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
+                        <input ng-model="actionType.Code" type="text" class="form-control input-sm"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4"><input type="checkbox" style="margin-top: 5px;"
+                                                ng-checked="actionType.IsFirstChirld" ng-model="actionType.IsFirstChirld"/>Không là giải đặc biệt</div>
+                </div>
+                <div class="row">
+                    <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
+                        Bậc chơi
+                    </span>
+                    <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
+                        <input ng-model="actionType.ActionTypeLevel" type="text" class="form-control input-sm"/>
+                    </div>
+                </div>
+                <div class="row">
+                    <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
+                        Mô tả
+                    </span>
+                    <div class="col-sm-12 col-xs-12" style="margin-top: 10px;">
+                        <textarea style="width: inherit" ng-model="actionType.Description"></textarea>
                     </div>
                 </div>
             </div>

@@ -11,9 +11,11 @@
     "simple-line-icons": "^2.4.1",
     "textangular": "^1.5.16"
   },
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "dungnv",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "angular-material": "^1.1.9"
+  }
 }

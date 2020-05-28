@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Random Number Project</title>
-
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
 
          <script src="{!! url('statics/angular/angular.min.js') !!}"></script>
@@ -35,14 +35,21 @@
         <link href="{!! url('custom.css') !!}" rel="stylesheet " type="text/css " />
 
         <script src="{!! url('app.js') !!}"></script>
+        <script src="{!! url('js/scopeFunction.js') !!}"></script>
         {{---------------------------MODAL-------------------------------}}
         <script src="{!! url('template/Modal/playerFormController.js') !!}"></script>
         <script src="{!! url('template/Modal/actionTypeFormController.js') !!}"></script>
+        <script src="{!! url('template/Modal/cashOutFormController.js') !!}"></script>
+        <script src="{!! url('template/Modal/syntaxFormController.js') !!}"></script>
+        <script src="{!! url('template/Modal/confirmDeleteController.js') !!}"></script>
         {{---------------------------ENDMODAL-----------------------------}}
 
         {{--------------------------SERVICES------------------------------}}
         <script type="text/javascript" src="{!! url('js/services/PlayerService.js') !!}"></script>
         <script type="text/javascript" src="{!! url('js/services/HomeService.js') !!}"></script>
+        <script type="text/javascript" src="{!! url('js/services/CaculatorServices.js') !!}"></script>
+        <script type="text/javascript" src="{!! url('js/services/SyntaxServices.js') !!}"></script>
+        <script type="text/javascript" src="{!! url('js/services/ActionTypeService.js') !!}"></script>
         {{--------------------------ENDSERVICES---------------------------}}
          <!--------------------------CONTROLLER-------------------------- -->
 

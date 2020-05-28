@@ -5,7 +5,7 @@
                 <span class="caption-subject">Quản lý loại chơi</span>
             </div>
             <div class="col-sm-6 col-xs-6">
-                <button class="btn btn-sm btn-action-create" type="button" ng-click="createActionTypeUi()">
+                <button class="btn btn-sm btn-action-create" type="button" ng-click="createActionTypeUi(0)">
                     <i class="icon-graph"></i>
                     <span>Thêm loại chơi</span>
                 </button>
@@ -23,24 +23,26 @@
                             <tr>
                                 <th>STT</th>
                                 <th>Tên loại chơi</th>
-                                <th>Mã loại chơi</th>
-                                <th>Tỉ lệ nhận về</th>
-                                <th>Tỉ lệ trúng</th>
+                                <th>Cú pháp chuẩn</th>
+                                <th>ActionTypeLevel</th>
+                                <th>IsFirstChirld</th>
                                 <th>Mô tả</th>
+                                <th></th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
+                            <tr ng-repeat="atype in actionsTypes">
                                 <td>{{$index}}</td>
-                                <td>Càng đặc biệt</td>
-                                <td>cang_db</td>
-                                <td>1</td>
-                                <td>70</td>
+                                <td>{{atype.Name}}</td>
+                                <td>{{atype.Code}}</td>
+                                <td>{{atype.ActionTypeLevel}}</td>
+                                <td>{{atype.IsFirstChirld}}</td>
+                                <td>{{atype.Description}}</td>
                                 <td>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="createActionTypeUi(atype.Id)">
                                         <i class="icon-note" style="color: royalblue"></i>
                                     </button>
-                                    <button class="btn btn-sm" type="button">
+                                    <button class="btn btn-sm" type="button" ng-click="delteItem(atype.Id)">
                                         <i class="icon-trash" style="color: red"></i>
                                     </button>
                                 </td>

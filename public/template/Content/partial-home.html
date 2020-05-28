@@ -1,5 +1,6 @@
-﻿<script>
-    $(function() {
+﻿<script src="../../js/controller/HomeController.js"></script>
+<script>
+    $(function () {
         $("#searchDate-12").datepicker();
     });
 </script>
@@ -10,7 +11,7 @@
                 <span class="caption-subject">Trang chủ</span>
             </div>
             <div class="col-sm-12">
-                <hr style="margin-top:0px !important;margin-bottom:10px !important;" />
+                <hr style="margin-top:0px !important;margin-bottom:10px !important;"/>
             </div>
         </div>
         <div class="row">
@@ -19,85 +20,200 @@
                     <span>Chọn ngày tháng:</span>
                 </div>
                 <div class="col-sm-4">
-                    <input style="height: 30px !important;" ng-model="searchDate" id="searchDate" class="form-control txtDateTime" type="text">
+                    <input style="height: 30px !important;" id="searchDate" class="form-control txtDateTime"
+                           type="text">
                 </div>
                 <div class="col-sm-2">
                     <button class="btn btn-sm btn-default"
-                            type="button" ng-click="search">
+                            type="button" ng-click="search()">
                         <i class="fa fa-search font-green-jungle"></i>
                         <span>Tìm kiếm</span>
                     </button>
                 </div>
             </div>
         </div>
-        <div class="row mg-top-20">
+        <div class="row mg-top-20" ng-if="data.Description">
             <div class="col-sm-8 col-xs-12">
                 <div class="table-responsive">
                     <div class="table-scrollable thin">
                         <table class="table table-advance table-bordered td-center">
                             <thead>
                             <tr>
-                                <th colspan="7" style="text-align: center;">Kết quả sổ xố ngày 24/07/2017</th>
+                                <th colspan="7" style="text-align: center;">{{data.Title}}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            <tr>
-                                <td>Giải đặc biệt</td>
-                                <td colspan="6"><span style="color: red;"><b>34037</b></span></td>
+                            <tr ng-repeat="row in data.Description">
+                                <td>{{row.key}}</td>
+                                <td ng-repeat="num in row.value" colspan="{{row.colspan}}"><span ng-style="row.style">{{num}}</span>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>Giải nhất</td>
-                                <td colspan="6">02388</td>
-                            </tr>
-                            <tr>
-                                <td>Giải nhì</td>
-                                <td colspan="3">96715</td>
-                                <td colspan="3">07260</td>
-                            </tr>
-                            <tr>
-                                <td>Giải ba</td>
-                                <td>24707</td>
-                                <td>30969</td>
-                                <td>09930</td>
-                                <td>46534</td>
-                                <td>51945</td>
-                                <td>85119</td>
-                            </tr>
-                            <tr>
-                                <td>Giải tư</td>
-                                <td colspan="2">2124</td>
-                                <td>6430</td>
-                                <td>9125</td>
-                                <td colspan="2">8050</td>
-                            </tr>
-                            <tr>
-                                <td>Giải năm</td>
-                                <td>6140</td>
-                                <td>3011</td>
-                                <td>5927</td>
-                                <td>9731</td>
-                                <td>7562</td>
-                                <td>9612</td>
-                            </tr>
-                            <tr>
-                                <td>Giải sáu</td>
-                                <td colspan="2">624</td>
-                                <td colspan="2">419</td>
-                                <td colspan="2">986</td>
-                            </tr>
-                            <tr>
-                                <td>Giải bảy</td>
-                                <td colspan="2">31</td>
-                                <td>03</td>
-                                <td>95</td>
-                                <td colspan="2">99</td>
-                            </tr>
+                            <!--<tr>-->
+                            <!--<td>Giải đặc biệt</td>-->
+                            <!--<td colspan="6"><span style="color: red;"><b>34037</b></span></td>-->
+                            <!--</tr>-->
                             </tbody>
                         </table>
                     </div>
 
                 </div>
             </div>
+        </div>
+        <div class="row mg-top-20" ng-if="!data.Description && !isInsert">
+            <span style="margin-left: 30px;" class="font-red">Không có dữ liệu để hiển thị</span>
+            <button class="btn btn-sm btn-default" type="button" ng-click="insertStart()">
+                <i class="icon-pencil font-green-jungle"></i>
+                <span>Nhập liệu</span>
+            </button>
+        </div>
+        <div class="row mg-top-20" ng-show="isInsert">
+            <form class="form-group-lg">
+                <div class="col-sm-12 col-xs-12">
+                    <div class="table-responsive">
+                        <div class="table-scrollable thin">
+                            <table class="table table-advance table-bordered td-center">
+                                <thead>
+                                <tr>
+                                    <th colspan="7" style="text-align: center;">
+                                        Nhập kết quả sổ xố
+                                    </th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <span>Giải đặc biệt</span>
+                                    </td>
+                                    <td colspan="6">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_db">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải nhất</span>
+                                    </td>
+                                    <td colspan="6">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_o">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải nhì</span>
+                                    </td>
+                                    <td colspan="3">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_two_a">
+                                    </td>
+                                    <td colspan="3">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_two_b">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải ba</span>
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_a">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_b">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_c">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_d">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_e">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_three_f">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải tư</span>
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_f_a">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_f_b">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_f_c">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_f_d">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải năm</span>
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_a">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_b">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_c">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_d">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_e">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_fi_f">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải sáu</span>
+                                    </td>
+                                    <td colspan="2">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_s_a">
+                                    </td>
+                                    <td colspan="2">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_s_b">
+                                    </td>
+                                    <td colspan="2">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_s_c">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <span>Giải bảy</span>
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_sev_a">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_sev_b">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_sev_c">
+                                    </td>
+                                    <td colspan="1">
+                                        <input required type="text" class="form-control input-sm" ng-model="val_sev_d">
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="sol-sm-12 col-xs-12">
+                    <button class="btn btn-sm btn-default btn-action-create" style="width: inherit" type="submit" ng-click="insert()">
+                        <span>Lưu</span>
+                        <i class="icon-action-redo fa-bold" style="color: white"></i>
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
 </div>

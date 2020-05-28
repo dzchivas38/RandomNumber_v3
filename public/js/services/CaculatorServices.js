@@ -1,28 +1,21 @@
-/**
- * Created by Dev-1 on 07/08/2017.
- */
 (function () {
     'use strict';
 
     angular
         .module('randomNumberApp')
-        .factory('HomeSvc', pl);
+        .factory('CalculatorSvc', pl);
 
-    pl.$inject = ['$http', '$q'];
+    pl.$inject = ['$http', '$q','blockUI'];
 
-    function pl($http, $q) {
+    function pl($http, $q,blockUI) {
         var service = {
-            getResultScheduce:getResultScheduce,
-            createKq:createKq,
+            process:process,
         };
 
         return service;
-        function getResultScheduce(pubDate) {
-            var url = 'api-get-result-resource/' + pubDate;
-            return getMethodService(url,null);
-        }
-        function createKq(data) {
-            var url = 'api-insert-item-kq/';
+        //hàm gọi API tính toán kết quả
+        function process(data) {
+            var url = 'api-get-calculator-process/';
             return postMethodService(url,data);
         }
         function getMethodService(restUrl,data) {
@@ -31,7 +24,8 @@
                 {
                     headers: {
                         "Accept": "application/json;odata=verbose",
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                     },
                 })
                 .then(function onSuccess(response) {
@@ -45,23 +39,23 @@
         }
         function postMethodService(restUrl,data) {
             var dfd = $q.defer();
+            blockUI.start("Đang tải ...!");
             $http.post(restUrl, data,
                 {
                     headers: {
                         "Accept": "application/json;odata=verbose",
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+
                     },
                 })
                 .then(function onSuccess(response) {
-                    if (_.get(data,"d")){
-                        dfd.resolve(_.get(response, "data.d"));
-                    }else{
-                        dfd.resolve(_.get(response, "data"));
-                    }
+                    blockUI.stop();
+                    dfd.resolve(_.get(response, "data"));
                 })
                 .catch(function onError(response) {
                     console.log(response);
-                    dfd.resolve(null);
+                    blockUI.stop();
+                    dfd.resolve(response);
                 });
             return dfd.promise;
         }

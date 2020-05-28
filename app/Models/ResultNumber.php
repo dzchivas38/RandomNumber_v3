@@ -15,10 +15,6 @@ class ResultNumber
     private $pubDate;
     private $isDelete;
 
-    /**
-     * ResultNumber constructor.
-     * @param $Id
-     */
     public function __construct()
     {
     }
@@ -102,4 +98,15 @@ class ResultNumber
     {
         $this->isDelete = $isDelete;
     }
+    public function jsonSerialize() {
+        return [
+            'Id' => $this->Id,
+            'Title' => $this->Title,
+            'Description' => $this->description,
+            'PubDate' => $this->pubDate,
+            'isDelete' => $this->isDelete
+        ];
+    }
+
+
 }

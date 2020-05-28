@@ -1,0 +1,35 @@
+<!doctype html>
+<!--<link href="/custom.css" rel="stylesheet " type="text/css ">-->
+<div class="modal-header">
+    <button type="button" class="close" ng-click="close()">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">
+        <i class="fa fa-info font-red"></i>
+        Delete
+    </h4>
+</div>
+<div class="modal-body">
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="form-horizontal">
+                <div class="row">
+                    <span class="col-sm-12 col-xs-12 txt-gray" style="margin-top: 15px;margin-bottom: 1px;">
+                        Bạn có thực sự muốn xóa bản ghi này ?
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-success" ng-click="commit()" style="width: 120px;background: #6bcc0f">
+        <i class="fa fa-telegram" style="color: white"></i>
+        OK
+    </button>
+    <button type="button" class="btn btn-sm" ng-click="close()" style="width: 120px;">
+        <i class="fa fa-undo" aria-hidden="true" style="color: dodgerblue"></i>
+        Cancel
+    </button>
+</div>
